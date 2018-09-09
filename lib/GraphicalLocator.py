@@ -4,7 +4,7 @@ from io import BytesIO
 from PIL import Image
 
 
-class GraphicalLocator(object):
+class GraphicalLocator:
 
     def __init__(self, img_path):
         self.locator = img_path
@@ -15,12 +15,6 @@ class GraphicalLocator(object):
         self.height = self.img.shape[0]
         self.width = self.img.shape[1]
         self.threshold = None
-
-    def center_x(self):
-            return self.x + int(self.width / 2) if self.x and self.width else None
-
-    def center_y(self):
-        return self.y + int(self.height / 2) if self.y and self.height else None
 
     def find_me(self, drv):
         # Clear last found coordinates
@@ -65,3 +59,9 @@ class GraphicalLocator(object):
         return cv2.rectangle(scr, (self.x, self.y),
                              (self.x + self.width, self.y + self.height),
                              (0, 0, 255), 2)
+
+    def center_x(self):
+            return self.x + int(self.width / 2) if self.x and self.width else None
+
+    def center_y(self):
+        return self.y + int(self.height / 2) if self.y and self.height else None
