@@ -1,5 +1,5 @@
 execsql==1.27.3.3
-numpy==1.15.1
+numpy==1.22.0
 Pillow==5.2.0
 pyodbc==4.0.24
 PyYAML==3.13
